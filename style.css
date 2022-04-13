@@ -7,6 +7,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,6 +15,8 @@ body {
   background-image: url("pics/bg-sand.jpg");
   background-attachment: scroll;
   backdrop-filter: blur(7px);
+
+  overflow-x: hidden;
 }
 
 main {
@@ -36,11 +39,12 @@ main {
   width: 95%;
   height: 11rem;
   margin: 0 auto;
-  margin-top: 1rem;
-  background-color: rgb(45, 153, 86);
+  margin-top: 0.6rem;
+  /* background-color: rgb(45, 153, 86); */
   border-radius: 0.7rem;
   overflow: hidden;
 }
+/* ---------------------------- */
 
 .gallery-item {
   display: flex;
@@ -51,19 +55,27 @@ main {
   overflow: hidden;
 }
 
-/* Helper class */
+/* Helper classes ------------  */
 .miniature {
   position: absolute;
   height: 11rem;
-  width: 250px;
+  width: 252.7px;
   top: 0;
   left: 0;
   border-radius: 0.2rem;
+
+  transition: transform 1.1s;
 }
 
-.miniature img {
+.gallery-item.miniature img {
   transform: scale(0.8);
+  opacity: 0.5;
 }
+
+.miniature.active img {
+  opacity: 1;
+}
+/* ---------------------------- */
 
 .gallery-item img {
   width: 130%;
@@ -86,22 +98,32 @@ main {
   height: calc(100vh - 15.2rem); /*3.2 (margin) + 12 (miniature)*/
   margin: 0 auto;
   top: 0;
-  /* background-color: rgb(172, 85, 85); */
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.8rem;
   /* display: none; */
 }
 
+/* Helper classes ------------  */
+.fullHeight {
+  height: calc(100vh - 3.6rem);
+}
+/* ---------------------------- */
+
 .slider-item {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: rgba(0, 0, 0, 0.4); */
   width: 100%;
   height: 100%;
-  border-radius: 0.8rem;
+  /* border-radius: 0.8rem; */
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   overflow: hidden;
+
+  transition: transform 1.1s;
 }
 
 .slider-item img {
@@ -109,6 +131,64 @@ main {
   /* width: 100%; */
   height: 100%;
   object-fit: contain;
+}
+
+.btn {
+  border: none;
+  background: none;
+  background-color: #666;
+  opacity: 0.6;
+  font-size: 3rem;
+  font-weight: 600;
+  /* padding: 1rem; */
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: all 0.25s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #888;
+  opacity: 0.8;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn-close {
+  width: 4rem;
+  height: 4rem;
+  top: 4.8%;
+  right: 0.8%;
+}
+
+.btn-left {
+  left: 1%;
+}
+
+.btn-right {
+  right: 1%;
+}
+
+.btn-hide-show {
+  width: 4rem;
+  height: 4rem;
+  left: 0.8%;
+  top: 95.1%;
+  /* bottom: -50%; */
+}
+
+/* HIDDEN CLASS */
+.hidden {
+  display: none;
 }
 
 /* MEDIA QUERIES */
