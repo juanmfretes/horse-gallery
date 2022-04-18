@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  /* max-width: 136.6rem; */
   padding: 1.8rem;
   background-image: url("pics/bg-sand.jpg");
   background-attachment: scroll;
