@@ -36,11 +36,9 @@ const btnHideShow = document.querySelector(".btn-hide-show");
 // Medida para separar slides entre sí (ver cómo ejecutar esto cada vez que se entra al "Slider Mode")
 const spacerSl =
   Number.parseFloat(getComputedStyle(sliderItems[0]).width) * 1.05;
-console.log(spacerSl);
 
 // Medida para separar miniaturas entre sí (ver cómo ejecutar esto cada vez que se entra al "Slider Mode")
 const spacerMin = Number.parseFloat(getComputedStyle(galleryItems[0]).width);
-console.log(spacerMin);
 
 // Gestionar slides y Miniatures
 let currentPic = 0; //guarda el slide/miniature (que está en grande)
@@ -141,10 +139,8 @@ const closeSliderMode = function () {
 const updateView = function () {
   // Change Slide
   changeSlide();
-
   // Change miniature
   changeMiniature();
-
   // Activate current miniature
   activateMiniature();
 };
@@ -188,23 +184,21 @@ const saveScrollDistance = function () {
 
 /* EVENT LISTENERS */
 // Poner en "Grid Mode" al cargar la página
-// OBS: para que cargue más rápido, se puede modificar el HTLM para que inicie en GRID MODE y no haga falta esta parte!!!!
 window.addEventListener("DOMContentLoaded", function () {
   hideSlider();
-  console.log(hiddenMiniatureBar);
 });
 
 // ABRIR "Slider Mode"
 gallery.addEventListener("click", function (event) {
   const element = event.target.closest(".gallery-item");
-  // Casos especiales
+  // Casos especiales (null or inside Slider mode)
   if (!element) return;
   else if (element.classList.contains("miniature")) return;
 
   // Save Scroll Distance
   saveScrollDistance();
-  console.log(scrollY);
 
+  // Manage Slide and Miniature
   currentPic = currentMin = element.dataset.num - 1;
   showSlider(element);
   changeSlide();
@@ -253,7 +247,6 @@ btnRight.addEventListener("click", function () {
 
 // RIGHT SLIDER BUTTON (Método 2: Usando la tecla "➡")
 document.addEventListener("keydown", function (event) {
-  console.log(event.key);
   if (sliderBox.classList.contains("hidden")) return;
   if (event.key === "ArrowRight") nextSlide();
 });
@@ -265,7 +258,6 @@ btnLeft.addEventListener("click", function () {
 
 // LEFT SLIDER BUTTON (Método 2: Usando la tecla "⬅")
 document.addEventListener("keydown", function (event) {
-  console.log(event.key);
   if (sliderBox.classList.contains("hidden")) return;
   if (event.key === "ArrowLeft") previousSlide();
 });
