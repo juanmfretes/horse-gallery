@@ -103,7 +103,7 @@ main {
 /* ---------------------------- */
 
 .gallery-item img {
-  width: 130%;
+  /* width: 130%; */
   display: block;
   object-fit: cover;
   opacity: 0.85;
@@ -121,7 +121,7 @@ main {
   position: relative;
   width: 95%;
   max-width: 1263.5px;
-  height: calc(100vh - 15.2rem); /* 3.2 (margin) + 12 (miniature) */
+  height: calc(100vh - 15.2rem); /* 3.6 (margin) + 11.6 (miniature) */
   margin: 0 auto;
   top: 0;
   overflow: hidden;
