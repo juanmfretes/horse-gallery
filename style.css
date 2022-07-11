@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-attachment: scroll;
+  /* background-attachment: scroll; */
   /* backdrop-filter: blur(7px); */
 
   overflow-x: hidden;
@@ -23,11 +23,18 @@ main {
   margin: 0 auto;
 }
 
-/* For blur only in the background-image */
+/* To apply blur only in the background-image */
 /* Add the content container on to of the img container */
+.content {
+  position: relative;
+}
+
+.bg-img {
+  position: fixed;
+}
+
 .bg-img,
 .content {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -46,7 +53,7 @@ main {
 .content {
   z-index: 99;
   padding: 1.8rem;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 /* GALLERY GRID */
@@ -106,7 +113,7 @@ main {
   /* width: 130%; */
   display: block;
   object-fit: cover;
-  opacity: 0.85;
+  opacity: 0.77;
 
   transition: all 0.4s;
 }
