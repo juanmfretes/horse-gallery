@@ -110,16 +110,14 @@ main {
 /* ---------------------------- */
 
 .gallery-item img {
-  /* width: 130%; */
-  display: block;
-  object-fit: cover;
+  height: 225px;
   opacity: 0.77;
 
   transition: all 0.4s;
 }
 
 .gallery-item img:hover {
-  transform: scale(0.8);
+  transform: scale(0.82);
   opacity: 1;
 }
 
