@@ -172,8 +172,6 @@ main {
   cursor: pointer;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 
   transition: all 0.25s;
 }
@@ -191,23 +189,29 @@ main {
 .btn-close {
   width: 4rem;
   height: 4rem;
-  top: 4.8%;
-  right: 0.8%;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-left,
+.btn-right {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .btn-left {
-  left: 1%;
+  left: 10px;
 }
 
 .btn-right {
-  right: 1%;
+  right: 10px;
 }
 
 .btn-hide-show {
   width: 4rem;
   height: 4rem;
-  left: 0.8%;
-  top: 95.1%;
+  bottom: 10px;
+  left: 10px;
 }
 
 /* HIDDEN CLASS */
