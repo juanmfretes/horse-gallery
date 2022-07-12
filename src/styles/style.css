@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  /* background-attachment: scroll; */
+  /* backdrop-filter: blur(7px); */
+
+  overflow-x: hidden;
+}
+
+main {
+  /* padding: 1.8rem; */
+  max-width: 136.6rem;
+  margin: 0 auto;
+}
+
+/* To apply blur only in the background-image */
+/* Add the content container on to of the img container */
+.content {
+  position: relative;
+}
+
+.bg-img {
+  position: fixed;
+}
+
+.bg-img,
+.content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add the image and the blur*/
+.bg-img {
+  background-image: url("../img/bg-sand.jpg");
+  filter: blur(7px);
+  z-index: 1;
+  transform: scale(1.1); /* To hide white borders while using blur effect */
+}
+
+/* Add the content and a padding around */
+.content {
+  z-index: 99;
+  padding: 1.8rem;
+  /* overflow-y: scroll; */
+}
+
+/* GALLERY GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 1.8rem;
+}
+
+/* Helper class */
+.spread {
+  position: relative;
+  display: block;
+  width: 95%;
+  max-width: 1263.5px;
+  height: 11rem;
+  margin: 0 auto;
+  margin-top: 0.6rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+/* ---------------------------- */
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18rem;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Helper classes ------------  */
+.miniature {
+  position: absolute;
+  height: 11rem;
+  width: 252.7px;
+  top: 0;
+  left: 0;
+  border-radius: 0.2rem;
+
+  transition: transform 1.1s;
+}
+
+.gallery-item.miniature img {
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.miniature.active img {
+  opacity: 1;
+}
+/* ---------------------------- */
+
+.gallery-item img {
+  /* width: 130%; */
+  display: block;
+  object-fit: cover;
+  opacity: 0.77;
+
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(0.8);
+  opacity: 1;
+}
+
+/* SLIDER */
+.slider-box {
+  position: relative;
+  width: 95%;
+  max-width: 1263.5px;
+  height: calc(100vh - 15.2rem); /* 3.6 (margin) + 11.6 (miniature) */
+  margin: 0 auto;
+  top: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.8rem;
+}
+
+/* Helper classes ------------  */
+.fullHeight {
+  height: calc(100vh - 3.6rem);
+}
+/* ---------------------------- */
+
+.slider-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  transition: transform 1.1s;
+}
+
+.slider-item img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn {
+  border: none;
+  background: none;
+  background-color: #666;
+  opacity: 0.6;
+  font-size: 3rem;
+  font-weight: 600;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+  position: absolute;
+
+  transition: all 0.25s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #888;
+  opacity: 0.8;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn-close {
+  width: 4rem;
+  height: 4rem;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-left,
+.btn-right {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-left {
+  left: 10px;
+}
+
+.btn-right {
+  right: 10px;
+}
+
+.btn-hide-show {
+  width: 4rem;
+  height: 4rem;
+  bottom: 10px;
+  left: 10px;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1050px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 22rem;
+  }
+}
