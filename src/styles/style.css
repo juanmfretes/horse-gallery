@@ -11,15 +11,12 @@ html {
 }
 
 body {
-  /* background-attachment: scroll; */
-  /* backdrop-filter: blur(7px); */
-
   overflow-x: hidden;
 }
 
 main {
   /* padding: 1.8rem; */
-  max-width: 136.6rem;
+  max-width: 144rem;
   margin: 0 auto;
 }
 
@@ -44,7 +41,7 @@ main {
 /* Add the image and the blur*/
 .bg-img {
   background-image: url("../img/bg-sand.jpg");
-  filter: blur(7px);
+  filter: blur(9px);
   z-index: 1;
   transform: scale(1.1); /* To hide white borders while using blur effect */
 }
