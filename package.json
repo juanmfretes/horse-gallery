@@ -2,9 +2,9 @@
   "name": "horse-gallery",
   "version": "3.0.0",
   "description": "oop gallery",
-  "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html --open"
+    "dev": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --no-minify"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/juanmfretes/horse-gallery#readme",
   "devDependencies": {
+    "core-js": "^3.23.5",
     "parcel": "^2.6.2",
-    "parcel-plugin-lazyload-lozad": "^0.0.1"
+    "parcel-plugin-lazyload-lozad": "^0.0.1",
+    "regenerator-runtime": "^0.13.9"
   }
 }
