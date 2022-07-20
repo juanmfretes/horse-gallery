@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/juanmfretes/horse-gallery#readme",
   "devDependencies": {
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "parcel-plugin-lazyload-lozad": "^0.0.1"
   }
 }

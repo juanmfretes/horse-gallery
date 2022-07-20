@@ -96,6 +96,10 @@ main {
   transition: transform 1.1s;
 }
 
+.lazy {
+  filter: blur(7px);
+}
+
 .gallery-item.miniature img {
   transform: scale(0.8);
   opacity: 0.5;
@@ -116,6 +120,18 @@ main {
 .gallery-item img:hover {
   transform: scale(0.82);
   opacity: 1;
+}
+
+/*  AUX DIV  */
+.aux-div {
+  background-color: rgba(0, 0, 0, 0);
+  height: 500px;
+
+  transition: 2000ms linear height;
+}
+
+.hide {
+  height: 0px;
 }
 
 /* SLIDER */
