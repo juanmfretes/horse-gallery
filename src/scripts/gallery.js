@@ -120,11 +120,11 @@ class Gallery {
   }
 
   showMiniatureBar() {
-    this.container.classList.remove("hidden");
+    this.container.classList.remove("hiddenBar");
   }
 
   hideMiniatureBar() {
-    this.container.classList.add("hidden");
+    this.container.classList.add("hiddenBar");
   }
 
   updateMiniatureHiddenState() {

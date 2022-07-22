@@ -230,6 +230,18 @@ main {
   display: none;
 }
 
+/* Hide MINIATURE BAR (to keep intersection observer functionality) */
+.hiddenBar {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.5%;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1050px) {
   .gallery {
