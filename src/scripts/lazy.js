@@ -10,13 +10,13 @@ class Lazy {
 
   addLazy(galleryPics, sliderPics) {
     // if (true) return;
-    this.galleryLazyPics = [...galleryPics]
-      .slice(16)
-      .map((div) => div.firstElementChild);
+    this.galleryLazyPics = [...galleryPics].map((div) => div.firstElementChild);
 
-    this.sliderLazyPics = [...sliderPics]
-      .slice(16)
-      .map((div) => div.firstElementChild);
+    // this.galleryLazyPics = [...galleryPics]
+    //   .slice(16)
+    //   .map((div) => div.firstElementChild);
+
+    this.sliderLazyPics = [...sliderPics].map((div) => div.firstElementChild);
 
     console.log(this.galleryLazyPics[0]);
     console.log(this.sliderLazyPics[0]);
@@ -28,14 +28,15 @@ class Lazy {
           const galleryImage = entry.target;
 
           // get current image index (this.galleryLazyPics)
-          // OBS: index = data-num - 17   (17 is the offset)
-          const currentIndex = +galleryImage.parentElement.dataset.num - 17;
+          // OBS: index = data-num - 1  (1 is the offset => array index starts at 0)
+          const currentIndex = +galleryImage.parentElement.dataset.num - 1;
 
           // Get current slide image
           const slideImage = this.sliderLazyPics[currentIndex];
 
           // Replace "src" with "data-src" (load "real" images)
-          galleryImage.src = galleryImage.dataset.src;
+          //
+          if (currentIndex > 16) galleryImage.src = galleryImage.dataset.src;
           slideImage.src = slideImage.dataset.src;
 
           // Remove lazy class when slide image finish loading (heavier)

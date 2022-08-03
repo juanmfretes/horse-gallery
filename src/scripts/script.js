@@ -119,12 +119,10 @@ window.addEventListener("DOMContentLoaded", function () {
   hideSlider();
 });
 
-window.addEventListener("load", function (event) {
-  console.log("termino");
-});
-
 // Activate lazy loading images
-Lazy.addLazy(Gallery.galleryPics, Slider.slides);
+window.addEventListener("load", function (event) {
+  Lazy.addLazy(Gallery.galleryPics, Slider.slides);
+});
 
 // ABRIR "Slider Mode"
 Gallery.container.addEventListener("click", function (event) {
