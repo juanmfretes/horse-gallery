@@ -17,12 +17,13 @@
   },
   "homepage": "https://github.com/juanmfretes/horse-gallery#readme",
   "devDependencies": {
-    "core-js": "^3.23.5",
-    "parcel": "^2.6.2",
+    "core-js": "^3.24.1",
+    "parcel": "^2.7.0",
     "parcel-plugin-lazyload-lozad": "^0.0.1",
     "regenerator-runtime": "^0.13.9"
   },
   "dependencies": {
     "serve": "^14.0.1"
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
